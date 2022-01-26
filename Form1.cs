@@ -8,6 +8,7 @@
         bool cancella = false;
         double NMemoria = 0;
         bool temaform = false;
+        bool cambioTemaForz = false;
 
         public Form1()
         {
@@ -20,43 +21,12 @@
         {
             switch (operazione)
             {
-                case 1:
-                    if (labelDisplay.Text != "")
-                    {
-                        labelCronologia.Text += labelOperazioneAttiva.Text;
-                        labelCronologia.Text += labelDisplay.Text;
-                        risultato += Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 2:
-                    if (labelDisplay.Text != "")
-                    {
-                        labelCronologia.Text += labelOperazioneAttiva.Text;
-                        labelCronologia.Text += labelDisplay.Text;
-                        risultato -= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 3:
-                    if (labelDisplay.Text != "")
-                    {
-                        labelCronologia.Text += labelOperazioneAttiva.Text;
-                        labelCronologia.Text += labelDisplay.Text;
-                        risultato *= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 4:
-                    if (labelDisplay.Text != "")
-                    {
-                        labelCronologia.Text += labelOperazioneAttiva.Text;
-                        labelCronologia.Text += labelDisplay.Text;
-                        risultato /= Convert.ToDouble(labelDisplay.Text);
-                    }
+                case <=4:
+                    operazioneAttiva();
                     break;
                 case 5:
                     if (labelDisplay.Text != "")
                     {
-                        labelCronologia.Text += labelOperazioneAttiva.Text;
-                        labelCronologia.Text += labelDisplay.Text;
                         double i = 0;
                         double n = risultato;
                         double j = Convert.ToDouble(labelDisplay.Text);
@@ -67,15 +37,46 @@
                     }
                     break;
             }
+            labelCronologia.Text += labelOperazioneAttiva.Text + labelDisplay.Text + " = ";
             labelDisplay.Text = Convert.ToString(risultato);
-            labelCronologia.Text += " = ";
-            labelCronologia.Text += risultato;
-            labelCronologia.Text += "\n";
+            labelCronologia.Text += risultato + "\n";;
             labelOperazioneAttiva.Text = "";
             operazione = 0;
             risultato = 0;
             cancella = false;
-            CambiaColore();
+        }
+
+        //FUNC SWITCH OPERAZIONI
+        private double operazioneAttiva()
+        {
+            switch (operazione)
+            {
+                case 1:
+                    if (labelDisplay.Text != "")
+                    {
+                        risultato += Convert.ToDouble(labelDisplay.Text);
+                    }
+                    break;
+                case 2:
+                    if (labelDisplay.Text != "")
+                    {
+                        risultato -= Convert.ToDouble(labelDisplay.Text);
+                    }
+                    break;
+                case 3:
+                    if (labelDisplay.Text != "")
+                    {
+                        risultato *= Convert.ToDouble(labelDisplay.Text);
+                    }
+                    break;
+                case 4:
+                    if (labelDisplay.Text != "")
+                    {
+                        risultato /= Convert.ToDouble(labelDisplay.Text);
+                    }
+                    break;
+            }
+            return risultato;
         }
 
         //BOTTONE +
@@ -89,29 +90,8 @@
                         risultato += Convert.ToDouble(labelDisplay.Text);
                     }
                     break;
-                case 1:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato += Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 2:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato -= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 3:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato *= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 4:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato /= Convert.ToDouble(labelDisplay.Text);
-                    }
+                case >=1:
+                    operazioneAttiva();
                     break;
             }
             labelOperazioneAttiva.Text += labelDisplay.Text;
@@ -139,29 +119,8 @@
                         }
                     }
                     break;
-                case 1:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato += Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 2:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato -= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 3:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato *= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 4:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato /= Convert.ToDouble(labelDisplay.Text);
-                    }
+                case >= 1:
+                    operazioneAttiva();
                     break;
             }
             operazione = 2;
@@ -186,29 +145,8 @@
                         risultato *= Convert.ToDouble(labelDisplay.Text);
                     }
                     break;
-                case 1:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato += Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 2:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato -= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 3:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato *= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 4:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato /= Convert.ToDouble(labelDisplay.Text);
-                    }
+                case >= 1:
+                    operazioneAttiva();
                     break;
             }
             labelOperazioneAttiva.Text += labelDisplay.Text;
@@ -236,29 +174,8 @@
                         }
                     }
                     break;
-                case 1:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato += Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 2:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato -= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 3:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato *= Convert.ToDouble(labelDisplay.Text);
-                    }
-                    break;
-                case 4:
-                    if (labelDisplay.Text != "")
-                    {
-                        risultato /= Convert.ToDouble(labelDisplay.Text);
-                    }
+                case >= 1:
+                    operazioneAttiva();
                     break;
             }
             labelOperazioneAttiva.Text += labelDisplay.Text;
@@ -314,7 +231,6 @@
         private void buttonC_Click(object sender, EventArgs e)
         {
             labelDisplay.Text = "";
-            CambiaColore();
         }
 
         //BOTTONE CE
@@ -374,7 +290,6 @@
             buttonRM.BackColor = Color.Peru;
             buttonMPiu.BackColor = Color.Peru;
             labelMemoria.Text = "";
-            CambiaColore();
         }
 
         //CARICAMENTO FINESTRA
@@ -384,6 +299,7 @@
             labelOperazioneAttiva.Text = "";
             labelMemoria.Text = "";
             labelCronologia.Text = "";
+            labelOrario.Text = "";
            
         }
 
@@ -438,11 +354,26 @@
             cancella = false;
         }
 
+        //BOTTONE PI GRECO
         private void buttonPi_Click(object sender, EventArgs e)
         {
             labelDisplay.Text = "3,1415926535";
         }
 
+
+        //TIMER CAMBIO TEMA
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if ((DateTime.Now.Hour >= 18 && DateTime.Now.Minute >= 40) || DateTime.Now.Hour >= 19 ||(DateTime.Now.Hour <= 6 && DateTime.Now.Minute <= 40) || DateTime.Now.Hour <= 5)
+            { 
+                CambiaColore(true);
+            }
+            else
+            {
+                CambiaColore(false);
+            }
+        }
+        //FUNC CAMBIO COLORE CON TIMER
         private void CambiaColore(bool tema)
         {
             if (tema == false)
@@ -455,6 +386,13 @@
             }
         }
 
+        //BOTTONE CAMBIO TEMA
+        private void button13_Click(object sender, EventArgs e)
+        {
+            CambiaColore();
+            timer1.Enabled = false;
+        }
+        //FUNC CAMBIO COLORE TASTO
         private void CambiaColore()
         {
             if (temaform == false)
@@ -466,46 +404,40 @@
                 coloreScuro();
             }
         }
+
+        //CAMBIO COLORE IN CHIARO
         private void coloreChiaro()
         {
             this.BackColor = Color.Khaki;
             labelCronologia.BackColor = Color.WhiteSmoke;
+            labelCronologia.ForeColor = Color.FromArgb(64, 64, 64);
             button13.BackColor = Color.FromArgb(64, 64, 64);
             temaform = true;
+            labelOrario.ForeColor = Color.FromArgb(64, 64, 64);
             button13.Text = "○";
         }
+
+        //CAMBIO COLORE IN SCURO
         private void coloreScuro()
         {
             this.BackColor = Color.FromArgb(26, 26, 26);
             labelCronologia.BackColor = Color.FromArgb(64, 64, 64);
+            labelCronologia.ForeColor = Color.WhiteSmoke;
             button13.BackColor = Color.WhiteSmoke;
             temaform = false;
+            labelOrario.ForeColor = Color.WhiteSmoke;
             button13.Text = "☼";
-
         }
 
-        //TIMER CAMBIO TEMA
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (DateTime.Now.Hour >= 18 && DateTime.Now.Minute >= 41)
-            {
-                CambiaColore(true);
-            }
-            else if (DateTime.Now.Hour >= 6 && DateTime.Now.Minute >= 41)
-            {
-                CambiaColore(false);
-            }
-        }
-
-        //BOTTONE CAMBIO TEMA
-        private void button13_Click(object sender, EventArgs e)
-        {
-            CambiaColore();
-        }
-
+        //LABEL ORARIO
         private void timerOrario_Tick(object sender, EventArgs e)
         {
-            labelOrario.Text = DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":";
+            labelOrario.Text = DateTime.Now.Hour.ToString() + ":";
+            if (DateTime.Now.Minute <10)
+            {
+                labelOrario.Text += "0";
+            }
+            labelOrario.Text += DateTime.Now.Minute.ToString() + ":";
             if (DateTime.Now.Second < 10)
             {
                 labelOrario.Text += "0";

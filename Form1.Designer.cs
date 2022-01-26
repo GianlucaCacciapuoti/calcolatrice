@@ -539,7 +539,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 10000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button13
@@ -561,11 +561,11 @@
             // 
             this.labelOrario.AutoSize = true;
             this.labelOrario.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelOrario.Location = new System.Drawing.Point(55, 100);
+            this.labelOrario.Location = new System.Drawing.Point(55, 91);
             this.labelOrario.Name = "labelOrario";
-            this.labelOrario.Size = new System.Drawing.Size(44, 20);
+            this.labelOrario.Size = new System.Drawing.Size(84, 20);
             this.labelOrario.TabIndex = 37;
-            this.labelOrario.Text = "18:51";
+            this.labelOrario.Text = "labelOrario";
             // 
             // timerOrario
             // 
